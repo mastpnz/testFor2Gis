@@ -55,6 +55,7 @@ TopWordsList *TopWordsModel::twList() const
 {
     if(mList)
         return mList;
+    return nullptr;
 }
 
 void TopWordsModel::setTwList(TopWordsList *newList)
@@ -76,9 +77,7 @@ void TopWordsModel::startWithFilePath(const QString &filepath)
 
 void TopWordsModel::addWord(const QString &word)
 {
-    beginResetModel();
     mList->appendItem(word);
-    endResetModel();
 }
 
 void TopWordsModel::updateHisto()
